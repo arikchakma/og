@@ -26,6 +26,15 @@ const nextConfig = {
 			},
 		];
 	},
+
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://og.arikko.dev/:path*'
+      }
+    ]
+  }
 };
 
 module.exports = nextConfig;
