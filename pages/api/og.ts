@@ -41,8 +41,12 @@ export default async function og(
 		};
 		const result: Data = await scrapeMetatags(req.query.url as string);
 		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Allow-Credentials', 'true');
 		res.setHeader('Access-Control-Allow-Methods', 'GET');
-		res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+		res.setHeader(
+			'Access-Control-Allow-Headers',
+			'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
+		);
 		res.status(200).json(result);
 	} catch (error: any) {
 		res.status(500).json({ error: error.message });
