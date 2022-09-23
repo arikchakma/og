@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const cors = require('cors')({ origin: true });
+// const cors = require('cors')({ origin: true });
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 import * as cheerio from 'cheerio';
