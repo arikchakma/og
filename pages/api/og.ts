@@ -42,7 +42,7 @@ export default async function og(
 			};
 		};
 		const result: Data = await scrapeMetatags(req.query.url as string);
-		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Allow-Origin', 'https://bookmarks.arikko.dev/');
 		res.setHeader('Access-Control-Allow-Credentials', 'true');
 		res.setHeader('Access-Control-Allow-Methods', 'GET');
 		res.setHeader(
