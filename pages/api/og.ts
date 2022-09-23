@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 // const cors = require('cors')({ origin: true });
+import NextCors from 'nextjs-cors';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 import * as cheerio from 'cheerio';
@@ -19,6 +20,12 @@ export default async function og(
 	res: NextApiResponse<Data | { error: any }>
 ) {
 	try {
+		await NextCors(req, res, {
+			// Options
+			methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+			origin: '*',
+			optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+		});
 		const scrapeMetatags = async (url: string) => {
 			const res = await fetch(url);
 			const html = await res.text();
