@@ -43,7 +43,7 @@ export default async function handler(req: NextRequest) {
 					viewBox="0 0 1200 60"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					tw="absolute bottom-0"
+					style={{position: 'absolute', bottom: '0'}}
 				>
 					<g opacity="0.15" filter="url(#filter0_b_0_1)">
 						<rect width="1200" height="60" fill="#F9F9FA" />
